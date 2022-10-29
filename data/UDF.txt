@@ -1,0 +1,9 @@
+1,tom,23
+2,jack,24
+3,lily,18
+4,lucy,19
+5,rose,16
+6,james,23
+7,kobe,24
+8,white,18
+9,black,20
