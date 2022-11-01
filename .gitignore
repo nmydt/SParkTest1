@@ -1,2 +1,5 @@
 # Project exclude paths
 /target/
+/metastore_db/
+/spark-warehouse/
+/.idea/

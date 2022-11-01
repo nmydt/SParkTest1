@@ -43,7 +43,7 @@ object Turple {
         $"value"(24).cast("string").as("col24"))
       .show()
 
-      spark.stop()
+    spark.stop()
   }
 
 }
