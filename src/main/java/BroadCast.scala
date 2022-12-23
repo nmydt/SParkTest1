@@ -16,11 +16,16 @@ object BroadCast {
     val sc: SparkContext = spark.sparkContext
     val list = List("spark")
     print(list.contains("spark"))
-    val broadcast: Broadcast[List[String]] = sc.broadcast(list)
+    var broadcast: Broadcast[List[String]] = sc.broadcast(list)
     sc.textFile("data/bd.txt").filter((line: String) => {
       broadcast.value.contains(line)
     }).foreach(println)
-
+    
+    //删除广播变量
+    broadcast.unpersist()
+    //重新更新广播变量
+    broadcast = sc.broadcast(list)
+    
     sc.stop()
     spark.stop()
   }
