@@ -46,29 +46,29 @@ object DistinctAndReduce {
     //结果 Array((1,5), (3,10))
 
     //continue与break
- 
-breakable(
-    for(i<-0 until 10) {
-      println(i)
-      if(i==5){
-        break()
-      }
-    }
-  )
- // 0,1,2,3,4,5
-(2)continue例子
-
-for(i<-0 until 10){
-      breakable{
-      if(i==3||i==6) {
-        break
-      }
-      println(i)
-      }
-    }
-    //0,1,2,3,5,7,8,9
-需要导入的包：
-
+    import util.control.Breaks._
+    
+    //break例子
+    breakable(
+        for(i<-0 until 10) {
+          println(i)
+          if(i==5){
+            break
+          }
+        }
+      )
+     // 0,1,2,3,4,5
+    
+    //continue例子
+    for(i<-0 until 10){
+          breakable{
+          if(i==3||i==6) {
+            break
+          }
+          println(i)
+          }
+        }
+        //0,1,2,4,5,7,8,9
 
     sc.stop()
     spark.stop()
