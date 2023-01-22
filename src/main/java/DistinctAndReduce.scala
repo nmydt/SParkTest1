@@ -62,10 +62,10 @@ object DistinctAndReduce {
     //continue例子
     for(i<-0 until 10){
           breakable{
-          if(i==3||i==6) {
-            break
-          }
-          println(i)
+            if(i==3||i==6) {
+              break
+            }
+            println(i)
           }
         }
         //0,1,2,4,5,7,8,9
